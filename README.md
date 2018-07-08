@@ -1,7 +1,7 @@
 
 # gettimestamp
 
-utility returning a time (UTC is default) or date. stamps existing files (add timestamp to the current-name).
+Utility generating a time- (UTC is default) or a date-stamp. Stamps existing files (add timestamp to the current-name).
 
 ## Manual
 
@@ -13,3 +13,5 @@ utility returning a time (UTC is default) or date. stamps existing files (add ti
   -l [ --local ]        Get Local Time (default UTC) (yyyymmddhhmmss)
   -t [ --time ]         Get Time (hh::mm:ss)
   -d [ --date ]         Get Date (dd::mm:yyyy)
+
+  The generated timestamps are not terminated, usefull for batch file inclusion.
