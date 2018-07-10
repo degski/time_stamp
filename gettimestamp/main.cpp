@@ -21,7 +21,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include <tchar.h>
 #include <ciso646>
 #include <cstdio>
 #include <ctime>
@@ -56,9 +55,9 @@ inline void getOptions ( int argc, char ** argv ) {
 
         ( "help,h", "This help screen" )
         ( "file,f", po::value<std::vector<std::string>> ( &g_names ), "File(s) or directories, to be time-stamped" )
-        ( "local,l", po::bool_switch ( &g_local ), "Local Time (default UTC) (yyyymmddhhmmss)" )
+        ( "local,l", po::bool_switch ( &g_local ), "Local Time (default (no parameters) is UTC) (yyyymmddhhmmss)" )
         ( "utc,u", po::bool_switch ( &g_time ), "UTC (hh::mm:ss)" )
-        ( "date,d", po::bool_switch ( &g_date ), "Date (dd::mm:yyyy)" )
+        ( "date,d", po::bool_switch ( &g_date ), "Date (dd.mm.yyyy)" )
         ( "month,m", po::bool_switch ( &g_month ), "Month (mm)" )
         ( "year,y", po::bool_switch ( &g_year ), "Year (yyyy)" )
         ( "release,r", po::bool_switch ( &g_year_month ), "Year and Month (yymm) for release stamping" );
@@ -104,22 +103,22 @@ std::string getTimestamp ( ) {
 
     char buffer [ 64 ] { 0 };
 
-    if ( g_date == false && g_time == false && g_year == false && g_month == false && g_year_month == false ) {
+    if ( g_date == false and g_time == false and g_year == false and g_month == false and g_year_month == false ) {
 
         snprintf ( buffer, 64, "%4i%02i%02i%02i%02i%02i", ptm.tm_year + 1900, ptm.tm_mon + 1, ptm.tm_mday, ptm.tm_hour, ptm.tm_min, ptm.tm_sec );
     }
 
-    else if ( g_date == true && g_time == false && g_year == false && g_month == false && g_year_month == false ) {
+    else if ( g_date == true and g_time == false and g_year == false and g_month == false and g_year_month == false ) {
 
         snprintf ( buffer, 64, "%02i.%02i.%04i", ptm.tm_mday, ptm.tm_mon + 1, ptm.tm_year + 1900 );
     }
 
-    else if ( g_date == false && g_time == true && g_year == false && g_month == false && g_year_month == false ) {
+    else if ( g_date == false and g_time == true and g_year == false and g_month == false and g_year_month == false ) {
 
         snprintf ( buffer, 64, "%02i:%02i:%02i", ptm.tm_hour, ptm.tm_min, ptm.tm_sec );
     }
 
-    else if ( g_date == true && g_time == true && g_year == false && g_month == false && g_year_month == false ) {
+    else if ( g_date == true and g_time == true and g_year == false and g_month == false and g_year_month == false ) {
 
         snprintf ( buffer, 64, "%02i.%02i.%04i/%02i:%02i:%02i", ptm.tm_mday, ptm.tm_mon + 1, ptm.tm_year + 1900, ptm.tm_hour, ptm.tm_min, ptm.tm_sec );
     }
