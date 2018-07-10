@@ -56,7 +56,7 @@ inline void getOptions ( int argc, char ** argv ) {
         ( "help,h", "This help screen" )
         ( "file,f", po::value<std::vector<std::string>> ( &g_names ), "File(s) or directories, to be time-stamped" )
         ( "local,l", po::bool_switch ( &g_local ), "Local Time (default (no parameters) is UTC) (yyyymmddhhmmss)" )
-        ( "utc,u", po::bool_switch ( &g_time ), "UTC (hh::mm:ss)" )
+        ( "utc,u", po::bool_switch ( &g_time ), "UTC (hh:mm:ss)" )
         ( "date,d", po::bool_switch ( &g_date ), "Date (dd.mm.yyyy)" )
         ( "month,m", po::bool_switch ( &g_month ), "Month (mm)" )
         ( "year,y", po::bool_switch ( &g_year ), "Year (yyyy)" )

@@ -11,9 +11,9 @@ folders (appends a timestamp (of your choice) to the current file- or folder-nam
       options:
       -h [ --help ]         This help screen
       -f [ --file ] arg     File(s) or directories, to be time-stamped
-      -l [ --local ]        Local Time (default UTC) (yyyymmddhhmmss)
-      -u [ --utc ]          UTC (hh::mm:ss)
-      -d [ --date ]         Date (dd::mm:yyyy)
+      -l [ --local ]        Local Time (default (no parameters) is UTC) (yyyymmddhhmmss)
+      -u [ --utc ]          UTC (hh:mm:ss)
+      -d [ --date ]         Date (dd.mm.yyyy)
       -m [ --month ]        Month (mm)
       -y [ --year ]         Year (yyyy)
       -r [ --release ]      Year and Month (yymm) for release stamping
